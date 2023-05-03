@@ -904,7 +904,7 @@ impl Board {
             }
 
             let mut score;
-            if moves_made == 1 {
+            if moves_made == 1 && PV {
                 // first move (presumably the PV-move)
                 let new_depth = depth + extension - 1;
                 score = -self.full_search::<PV, NNUE>(tt, l_pv, info, t, new_depth, -beta, -alpha);
